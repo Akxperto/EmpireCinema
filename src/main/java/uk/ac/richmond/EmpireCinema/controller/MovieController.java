@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import uk.ac.richmond.EmpireCinema.entity.Movie;
 import uk.ac.richmond.EmpireCinema.entity.Seat;
 import uk.ac.richmond.EmpireCinema.service.MovieService;
 
@@ -17,9 +18,36 @@ public class MovieController
     private MovieService movieService;
 
     @GetMapping
-
-    public List<Seat> getSeats()
+    public List<Movie> getAllMovies()
     {
-        return movieService.get
+        return  movieService.getAllMovies();
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

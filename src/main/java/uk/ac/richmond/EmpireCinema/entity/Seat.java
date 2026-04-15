@@ -1,5 +1,6 @@
 package uk.ac.richmond.EmpireCinema.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,8 @@ public class Seat
     @Column(nullable = false);
     private boolean isAvailable;
 
-    @ManyToOne
-    private Movie movie;
+    @OneToMany(mappedBy ="seat" CascadeType.ALL)
+    @JsonIgnoreProperties("seat")
+
+
 }
