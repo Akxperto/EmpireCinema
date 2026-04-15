@@ -1,13 +1,25 @@
 package uk.ac.richmond.EmpireCinema.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import uk.ac.richmond.EmpireCinema.entity.Seat;
+import uk.ac.richmond.EmpireCinema.service.MovieService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/movies")
 public class MovieController
 {
     @Autowired
-    private SeatController seatController;
+    private MovieService movieService;
+
+    @GetMapping
+
+    public List<Seat> getSeats()
+    {
+        return movieService.get
+    }
 }
