@@ -16,14 +16,15 @@ import java.util.List;
 @NoArgsConstructor
 public class Screen {
     @Id
-    public String screenId;
+    public String Id;
     @Column(nullable = false, length = 50)
     private String screenType;
     @Column(nullable = false, length = 50)
     private int capacity;
     // one instance of screen can have many movies
     @OneToMany(mappedBy = "screen")
-    private List<Movie> movies;
+    private List<Seats> Seats;
 
 }
+
 

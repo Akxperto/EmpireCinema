@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -15,13 +17,19 @@ public class Seat
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(nullable = false);
+
+    @Column(nullable = false)
     private Integer seatNumber;
-    @Column(nullable = false);
+
+    @Column(nullable = false)
     private boolean isAvailable;
 
-    @OneToMany(mappedBy ="seat" CascadeType.ALL)
-    @JsonIgnoreProperties("seat")
+    @ManyToOne
+    @JoinColumn(name = "screen_id", nullable = false)
+    @JsonIgnoreProperties("seats")
+    private Screen screen;
+
+    @OneToMany
 
 
 }

@@ -18,3 +18,5 @@ public class ScreenService
         return screenRepo.findAll();
     }
 }
+Screen Screen1 = new Screen(1,"Standard",50);
+
