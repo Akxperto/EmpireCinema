@@ -17,9 +17,9 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer id;
     @Column(nullable = false, length = 50)
-    private String title;
+    public String title;
     @Column(nullable = false, length = 50)
-    private boolean isRunning;
+    public LocalDate releaseDate;
 
     @ManyToOne //many instances of movie can belong to one screen
     @JoinColumn(name = "screen_id", nullable = false)

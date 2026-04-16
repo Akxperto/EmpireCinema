@@ -33,6 +33,10 @@ public class MovieService implements UserDetailsService
     {
         return movieRepo.findByTitle(title);
     }
+//    public List<Movie> getMovieIfRunning(String title)
+//    {
+//
+//    }
 
 
     @Override

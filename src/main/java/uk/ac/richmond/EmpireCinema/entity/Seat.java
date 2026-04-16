@@ -22,14 +22,12 @@ public class Seat
     private Integer seatNumber;
 
     @Column(nullable = false)
-    private boolean isAvailable;
+    private boolean isReserved;
 
     @ManyToOne
     @JoinColumn(name = "screen_id", nullable = false)
     @JsonIgnoreProperties("seats")
     private Screen screen;
-
-    @OneToMany
 
 
 }

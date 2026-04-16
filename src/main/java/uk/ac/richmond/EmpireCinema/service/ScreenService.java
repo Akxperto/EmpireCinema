@@ -2,6 +2,7 @@ package uk.ac.richmond.EmpireCinema.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uk.ac.richmond.EmpireCinema.entity.Movie;
 import uk.ac.richmond.EmpireCinema.entity.Screen;
 import uk.ac.richmond.EmpireCinema.repository.ScreenRepo;
 
@@ -17,6 +18,9 @@ public class ScreenService
     {
         return screenRepo.findAll();
     }
-}
-Screen Screen1 = new Screen(1,"Standard",50);
+    public List<Movie> addMovieToScreen()
+    {
+
+    }
+    }
 
