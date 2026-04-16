@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Screen {
     @Id
-    public int Id; //1 or 2
+    public int id; //1 or 2
     @Column(nullable = false, length = 50)
     private String type;
     @Column(nullable = false, length = 50)

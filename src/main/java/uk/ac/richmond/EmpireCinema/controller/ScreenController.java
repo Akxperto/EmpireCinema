@@ -1,3 +1,4 @@
+package uk.ac.richmond.EmpireCinema.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,7 @@ import uk.ac.richmond.EmpireCinema.service.ScreenService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/screen")
+@RequestMapping("/screens")
 public class ScreenController
 {
     @Autowired

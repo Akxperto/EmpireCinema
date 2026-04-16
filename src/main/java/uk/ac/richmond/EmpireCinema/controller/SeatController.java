@@ -17,7 +17,7 @@ public class SeatController
     private SeatService seatService;
 
 
-    @GetMapping("/movie/{movieId}")
+    @GetMapping("/movies/{movieId}")
     public ResponseEntity<List<Seat>>  getSeatsByMovie(@PathVariable int movieId)
     {
         try
@@ -39,7 +39,7 @@ public class SeatController
                 .orElseGet(() -> ResponseEntity.status(404).build());
     }
 
-    @PostMapping("/screen/{screenId}")
+    @PostMapping("/screens/{screenId}")
     public ResponseEntity<Seat> addSeatToScreen (@PathVariable int screenId, @RequestBody Seat seat)
     {
         try
