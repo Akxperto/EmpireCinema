@@ -33,9 +33,4 @@ public class Booking
     @JoinColumn(name="screen")
     @JsonIgnoreProperties("screen")
     private Screen screen;
-
-    @JoinColumn(name="seat")
-    @JsonIgnoreProperties("seat")
-    private Seat seat;
-
 }

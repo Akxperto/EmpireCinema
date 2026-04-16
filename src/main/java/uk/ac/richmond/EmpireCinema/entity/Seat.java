@@ -19,7 +19,6 @@ public class Seat
     private Integer id;
 
     @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer seatNumber;
 
     @Column(nullable = false)
