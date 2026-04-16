@@ -1,4 +1,42 @@
 package uk.ac.richmond.EmpireCinema.controller;
 
-public class SeatController {
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import uk.ac.richmond.EmpireCinema.entity.Seat;
+import uk.ac.richmond.EmpireCinema.service.SeatService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/seats)
+public class SeatController
+{
+    @Autowired
+    private SeatService seatService;
+
+
+    @GetMapping("/movie/{movieId}")
+    public ResponseEntity<List<Seat>>  getSeatsByMovie(@PathVariable int movieId)
+    {
+        try
+        {
+            List<Seat> seats = seatService.getSeatsByMovie(movieId);
+            return ResponseEntity.status(200).body(seats);
+        } catch (EntityNotFoundException e)
+            {
+            return ResponseEntity.status(404).build();
+            }
+
+    }
+
+    @PutMapping("/reserve/{id}")
+    public ResponseEntity<?> reserveSeat(@PathVariable Integer id)
+    {
+        return seatService.reserveSeat(id)
+                .map(seat -> ResponseEntity.status(200).body(seat))
+                .orElseGet(() -> ResponseEntity.status(404).build());
+    }
+
 }

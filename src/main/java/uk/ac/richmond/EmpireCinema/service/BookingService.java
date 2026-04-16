@@ -25,7 +25,7 @@ public class BookingService
                 .toList();
     }
 
-    public List<Booking> getMovieByScreenId(int screenId)
+    public List<Movie> getMovieByScreenId(int screenId)
     {
         LocalDate today = LocalDate.now();
         return bookingRepo.findByScreenIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(screenId,today,today)
