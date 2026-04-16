@@ -1,9 +1,7 @@
 package uk.ac.richmond.EmpireCinema.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import uk.ac.richmond.EmpireCinema.entity.Movie;
 import uk.ac.richmond.EmpireCinema.entity.Seat;
 import uk.ac.richmond.EmpireCinema.service.MovieService;
@@ -23,7 +21,11 @@ public class MovieController
         return  movieService.getAllMovies();
     }
 
-
+    @PostMapping
+    public Movie addMovie(@RequestBody Movie movie)
+    {
+        movieService.addMovie(movie);
+    }
 
 }
 
