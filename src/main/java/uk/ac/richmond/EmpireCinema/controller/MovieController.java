@@ -24,7 +24,7 @@ public class MovieController
     @PostMapping
     public Movie addMovie(@RequestBody Movie movie)
     {
-        movieService.addMovie(movie);
+        return movieService.addMovie(movie);
     }
 
 }

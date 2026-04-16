@@ -49,19 +49,15 @@ public class SeatService {
                     return seatRepo.save(seat);
     });
     }
-    @PostMapping("/screen/{screenId}")
-    public ResponseEntity<Seat> addSeatToScreen(@PathVariable int screenId, @RequestBody Seat seat)
+    public Seat addSeatToScreen(int screenId, Seat seat)
     {
-        try
-        {
-            Seat newSeat = seatService.addSeatToScreen(screenId, seat);
-            return ResponseEntity.status(201).body(newSeat);
-        } catch
-        (EntityNotFoundException e)
-        {
-            return ResponseEntity.status(404).build();
-        }
+        Screen sccreen = screenRepo.findById(screenId)
+                .orElseThrow(() -> new EntityNotFoundException("Screen is not currently showing"));
+        seat.setScreen(screen);
+        seat.setReserved(false);
+        return seatRepo.save(seat);
     }
+
 
 
 

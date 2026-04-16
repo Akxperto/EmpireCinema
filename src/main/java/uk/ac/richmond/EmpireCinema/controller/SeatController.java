@@ -39,17 +39,17 @@ public class SeatController
                 .orElseGet(() -> ResponseEntity.status(404).build());
     }
 
-    @PostMapping("screen/{screenId}")
+    @PostMapping("/screen/{screenId}")
     public ResponseEntity<Seat> addSeatToScreen (@PathVariable int screenId, @RequestBody Seat seat)
     {
         try
         {
             Seat newSeat = seatService.addSeatToScreen(screenId, seat);
-                return ResponseEntity.status(201).body(seatService.addSeatToScreen(screenId, seat));
+            return ResponseEntity.status(201).body(newSeat);
         } catch (EntityNotFoundException e)
         {
             return ResponseEntity.status(404).build();
         }
-    });
+    }
 
 }
