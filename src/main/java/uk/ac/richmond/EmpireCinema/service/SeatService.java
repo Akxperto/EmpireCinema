@@ -53,9 +53,15 @@ public class SeatService {
     {
         Screen screen = screenRepo.findById(screenId)
                 .orElseThrow(() -> new EntityNotFoundException("Screen is not currently showing"));
+
+        if (seat.getSeatNumber() > screen.getCapacity())
+            throw new IllegalArgumentException("Screen Capacity Exceeded");
+
         seat.setScreen(screen);
         seat.setReserved(false);
         return seatRepo.save(seat);
+
+
     }
 
 

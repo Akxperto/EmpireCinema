@@ -40,15 +40,19 @@ public class SeatController
     }
 
     @PostMapping("/screens/{screenId}")
-    public ResponseEntity<Seat> addSeatToScreen (@PathVariable int screenId, @RequestBody Seat seat)
+    public ResponseEntity<?> addSeatToScreen (@PathVariable int screenId, @RequestBody Seat seat)
     {
         try
         {
             Seat newSeat = seatService.addSeatToScreen(screenId, seat);
             return ResponseEntity.status(201).body(newSeat);
-        } catch (EntityNotFoundException e)
+        }
+        catch (EntityNotFoundException e)
         {
             return ResponseEntity.status(404).build();
+        }
+        catch (IllegalArgumentException e) {
+            return ResponseEntity.status(400).body(e.getMessage());
         }
     }
 
