@@ -18,7 +18,7 @@ public class BookingService
     public List<Movie> getRunningMovies()
     {
         LocalDate today = LocalDate.now();
-        return bookingRepo.findByStartEndDate(today,today)
+        return bookingRepo.findByStartDateLessThanEqualAndEndDateGreaterThanEqual(today,today)
                 .stream()
                 .map(Booking::getMovie)
                 .distinct()
