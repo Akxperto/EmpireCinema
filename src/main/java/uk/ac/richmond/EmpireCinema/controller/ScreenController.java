@@ -9,7 +9,7 @@ import uk.ac.richmond.EmpireCinema.service.ScreenService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/screens")
+@RequestMapping("/screen")
 public class ScreenController
 {
     @Autowired

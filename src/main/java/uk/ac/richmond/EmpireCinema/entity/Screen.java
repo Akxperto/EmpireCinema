@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Screen {
