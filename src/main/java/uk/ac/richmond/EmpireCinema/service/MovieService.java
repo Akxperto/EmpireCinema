@@ -1,9 +1,6 @@
 package uk.ac.richmond.EmpireCinema.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import uk.ac.richmond.EmpireCinema.entity.Movie;
 import uk.ac.richmond.EmpireCinema.repository.MovieRepo;
@@ -12,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MovieService implements UserDetailsService
+public class MovieService
 {
     @Autowired
     private MovieRepo movieRepo;
@@ -38,9 +35,4 @@ public class MovieService implements UserDetailsService
 //
 //    }
 
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
-    }
 }

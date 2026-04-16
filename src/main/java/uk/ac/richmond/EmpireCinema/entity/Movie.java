@@ -14,15 +14,11 @@ import java.util.List;
 @NoArgsConstructor
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
     @Column(nullable = false, length = 50)
     public String title;
     @Column(nullable = false, length = 50)
     public LocalDate releaseDate;
-
-    @ManyToOne //many instances of movie can belong to one screen
-    @JoinColumn(name = "screen_id", nullable = false)
-    private Screen screen;
 
     }

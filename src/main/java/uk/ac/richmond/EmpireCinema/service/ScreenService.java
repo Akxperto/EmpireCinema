@@ -18,9 +18,9 @@ public class ScreenService
     {
         return screenRepo.findAll();
     }
-    public List<Movie> addMovieToScreen()
-    {
-
-    }
+//    public List<Movie> addMovieToScreen()
+//    {
+//
+//    }
     }
 

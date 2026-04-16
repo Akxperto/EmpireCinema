@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uk.ac.richmond.EmpireCinema.entity.Screen;
-import uk.ac.richmond.EmpireCinema.service.MovieService;
+import uk.ac.richmond.EmpireCinema.service.ScreenService;
 
 import java.util.List;
 
@@ -13,11 +13,11 @@ import java.util.List;
 public class ScreenController
 {
     @Autowired
-    private MovieService movieService;
+    private ScreenService screenService;
 
     @GetMapping
     public List<Screen> getAllScreens()
     {
-        return movieService.getAllMovies();
+        return screenService.getAllScreens();
     }
 }

@@ -26,7 +26,7 @@ public class Seat
 
     @ManyToOne
     @JoinColumn(name = "screen_id", nullable = false)
-    @JsonIgnoreProperties("seats")
+    @JsonIgnoreProperties("screen")
     private Screen screen;
 
 
