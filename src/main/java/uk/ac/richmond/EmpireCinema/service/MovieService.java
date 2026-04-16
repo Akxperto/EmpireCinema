@@ -30,9 +30,9 @@ public class MovieService
     {
         return movieRepo.findByTitle(title);
     }
-//    public List<Movie> getMovieIfRunning(String title)
-//    {
-//
-//    }
 
+    public void deleteMovie(int id)
+    {
+        movieRepo.deleteById(id);
+    }
 }

@@ -51,7 +51,7 @@ public class SeatService {
     }
     public Seat addSeatToScreen(int screenId, Seat seat)
     {
-        Screen sccreen = screenRepo.findById(screenId)
+        Screen screen = screenRepo.findById(screenId)
                 .orElseThrow(() -> new EntityNotFoundException("Screen is not currently showing"));
         seat.setScreen(screen);
         seat.setReserved(false);
