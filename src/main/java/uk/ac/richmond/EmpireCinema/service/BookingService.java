@@ -25,5 +25,16 @@ public class BookingService
                 .toList();
     }
 
+    public List<Booking> getMovieByScreenId(int screenId)
+    {
+        LocalDate today = LocalDate.now();
+        return bookingRepo.findByScreenIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(screenId,today,today)
+                .stream()
+                .map(Booking::getMovie)
+                .distinct()
+                .toList();
+
+    }
+
 
 }
