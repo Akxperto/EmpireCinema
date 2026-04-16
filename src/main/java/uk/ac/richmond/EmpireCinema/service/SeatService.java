@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import uk.ac.richmond.EmpireCinema.entity.Booking;
 import uk.ac.richmond.EmpireCinema.entity.Seat;
 import uk.ac.richmond.EmpireCinema.repository.BookingRepo;
+import uk.ac.richmond.EmpireCinema.repository.ScreenRepo;
 import uk.ac.richmond.EmpireCinema.repository.SeatRepo;
 
 import java.time.LocalDate;
@@ -16,7 +17,10 @@ import java.util.Optional;
 public class SeatService {
     @Autowired
     private SeatRepo seatRepo;
+    @Autowired
     private BookingRepo bookingRepo;
+    @Autowired
+    private ScreenRepo screenRepo;
 
     public List<Seat> getAllSeats()
     {
@@ -38,9 +42,10 @@ public class SeatService {
                     seat.setReserved(true);
                     return seatRepo.save(seat);
     });
-
-
-
     }
+//    public Seat addSeatToScreen(int screenId, Seat seat)
+//    {
+//        Screen screen = screenRepo
+//    }
 
 }

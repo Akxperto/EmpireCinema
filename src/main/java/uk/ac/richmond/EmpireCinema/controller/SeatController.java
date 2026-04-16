@@ -10,7 +10,7 @@ import uk.ac.richmond.EmpireCinema.service.SeatService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/seats)
+@RequestMapping("/seats")
 public class SeatController
 {
     @Autowired
